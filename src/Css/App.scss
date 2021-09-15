@@ -1,0 +1,326 @@
+$primary-color: white;
+$secondary-color: #fcd556;
+$third-color: #1a100a;
+$fourth-color: #c52213;
+$fifth-color: rgb(243, 168, 122);
+$price-color: #005400;
+$primary-font: Helvetica, sans-serif;
+$secondary-font: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
+$font-size: 18px;
+$radius: 5px; 
+
+@mixin theme($theme: $secondary-color) {
+    background: $theme;
+    border-width : 0px;
+    color: $third-color;
+    border-radius: $radius;
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    font-size: 20px;
+    padding: 8px;
+  }
+
+  @mixin button-theme($button-theme: $secondary-color) {
+    text-align: center;
+    border-width: 0px;
+    border-radius: $radius;
+    margin: 20px;
+    padding: 16px;
+    width: 200px;
+    background-color: $button-theme;
+    font-weight: bold;
+    font-size: 18px;
+
+  }
+
+
+
+body {
+    font-family: $primary-font;
+    font-size: $font-size;
+    background-color: $primary-color;
+}
+
+img {
+    width: 100%;
+    
+    
+}
+
+.main-section {
+    max-width: 1920px;
+    margin: 0px auto;
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 700px;
+}
+
+.shop-strap {
+    color: white;
+    background-color: $third-color;
+    padding: 5px 0px 5px 20px;
+}
+
+.title {
+    color: $secondary-color;
+    
+    
+}
+
+.categories {
+    flex: 2 250px;
+    padding: 15px;
+
+}
+
+.category-element{
+    max-width: 400px;
+    text-align: center;
+    background-color:  $secondary-color;
+    text-decoration: none;
+    display: block;
+    margin: 15px auto;
+    padding: 15px;
+    color: $third-color;
+    font-weight: bold;
+    border-radius: $radius;
+}
+
+.active-category-element {
+background-color: $fifth-color;
+}
+
+.products {
+    flex: 10 700px;
+}
+
+.start {
+    background-color: $third-color;
+}
+
+
+.sentence {
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+
+}
+
+footer {
+    height: 100px;
+    width: 100%;
+    background-color: $third-color;
+}
+
+.row{
+    width: 90%;
+    border: 1px solid $fifth-color;
+    border-radius: $radius;
+    margin: 30px auto;
+    display: flex;
+    flex-wrap: wrap;
+        div, p {
+            display: inline;
+        }
+} 
+
+.child {
+    flex: 1 250px;
+    display: flex !important;
+    align-items: center !important;
+
+}
+
+.child-2{
+    flex: 10 250px;
+    flex-wrap: wrap;
+    display: flex !important;
+    align-items: center !important;
+}
+
+
+.product-picture {
+    width: 240px;
+    margin: 20px;
+}
+
+
+.product-title {
+    font-size: 20px;
+    color: $fourth-color;
+    font-weight: bold;
+    margin: 20px;
+    font-size: 22px;
+    min-width: 150px;
+    
+    
+}
+
+.product-price {
+    color: $price-color;
+    font-weight: bold;
+    margin: 20px;
+    font-size: 22px;
+    min-width: 80px;
+    
+    
+}
+
+.main-button {
+    @include button-theme;
+}
+
+.no-products {
+    text-align: center;
+    color: $third-color;
+}
+
+.select-box {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 700px;
+    margin-bottom: 20px;
+}
+
+
+.product-list-settings {
+    font-weight: bold;
+    font-size: 16px;
+    margin: 20px;
+        select {
+            margin: 8px;
+            font-size: 18px;
+        }
+}
+
+.select-one {
+    flex: 1 200px;
+}
+
+.select-two {
+    flex: 1 280px;
+}
+
+
+
+.pagination-controls{
+    display: flex;
+    justify-content: center;
+}
+
+.page-button {
+    @include theme;
+}
+
+.active-page-button {
+    @include theme($theme: $fifth-color);
+}
+
+.product-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.big-product-picture-box {
+    padding: 60px 20px;
+    flex: 1 250px;
+}
+.product-description{
+    flex: 1 250px;
+    padding: 60px 20px;
+    
+
+}
+
+.description {
+    margin: 50px 0px;
+}
+
+.big-product-name {
+    color: $fourth-color;
+    text-align: center;
+}
+
+.price {
+    color: $price-color;
+   
+}
+
+.amount {
+    color: grey;
+}
+
+.check-amount {
+    font-size: 18px;
+    font-weight: bold;
+}
+.back-button{
+    @include button-theme;
+    margin-left: 0px;
+    display: block;
+}
+
+.add-button {
+    @include button-theme($button-theme: $price-color);
+    color: white;
+    margin: 50px 0px 0px 0px;
+    display: block;
+}
+
+.red-warning {
+    color: red;
+}
+
+.cart {
+    padding: 20px;
+}
+
+table {
+    border-collapse: collapse;
+}
+.table-row {
+    
+    td {
+        padding: 16px;
+        border: 1px solid $fifth-color;
+    }
+}
+
+.delete {
+    font-size: 18px;
+    border-width: 0px;
+    border-radius: 5px;
+    background-color: $fourth-color;
+    color: white;
+    padding: 12px;
+}
+
+.cart-button {
+    border-width: 0px;
+    background-color: $third-color;
+    color: white;
+}
+
+@media(min-width: 768px){
+    .sentence {
+        top: 60px;
+        font-size: 60px;
+    }
+}
+
+
+@media(min-width: 980px) {
+    .shop-strap {
+        position: relative;
+    }
+    .short-cart{
+        position: absolute;
+        top: 5px;
+        right: 80px;
+    }
+    .sentence {
+        top: 200px;
+        font-size: 70px;
+    }
+
+}

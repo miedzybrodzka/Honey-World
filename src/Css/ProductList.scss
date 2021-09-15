@@ -1,0 +1,48 @@
+@use 'App';
+
+
+.product-picture {
+    width: 250px;
+    height: 200px;
+    margin: 20px;
+}
+
+
+.product-title {
+    font-size: 20px;
+    color: App.$fourth-color;
+    font-weight: bold;
+    margin: 20px;
+    height: 25px;
+    font-size: 22px;
+}
+
+.product-price {
+    color: #005400;
+    font-weight: bold;
+    margin: 20px;
+    font-size: 22px;
+    height: 25px;
+}
+
+.main-button {
+    text-align: center;
+    border-width: 0px;
+    border-radius: $radius;
+    margin: 20px;
+    padding: 16px;
+    width: 200px;
+    background-color: $secondary-color;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.no-products {
+    text-align: center;
+    color: $third-color;
+}
+
+.product-list-settings {
+    font-size: 18px;
+    
+}

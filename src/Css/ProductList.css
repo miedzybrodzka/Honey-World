@@ -1,0 +1,21 @@
+@use 'App';
+.row {
+  width: 100%;
+}
+
+.row div, .row p {
+  display: inline;
+}
+
+.product-picture {
+  width: 200px;
+  height: 200px;
+  margin: 20px;
+}
+
+.main-button {
+  border-width: 0px;
+  width: 150px;
+  background-color: App;
+  font-weight: bold;
+}
