@@ -4,7 +4,7 @@ const chokidar = require('chokidar');
 const cors = require('cors');
 const history = require('connect-history-api-fallback');
 
-const fileName = process.argv[2] || './data.js';
+const fileName = process.argv[2] || './data.json';
 const port = process.argv[3] || 3500;
 
 let router = undefined;
