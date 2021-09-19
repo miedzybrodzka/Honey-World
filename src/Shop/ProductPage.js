@@ -10,6 +10,13 @@ export class ProductPage extends Component {
             chosenAmount: 0,
             warning: ''
         }
+        
+    }
+
+    componentDidMount(){
+      if(!this.props.savedParams._page){
+        this.props.loadProducts({category_like: this.props.routeProps.match.params.category === 'wszystkie produkty'? '' : this.props.routeProps.match.params.category});
+      }
     }
 
     addToCart = (ev, amount) => {
@@ -32,7 +39,7 @@ export class ProductPage extends Component {
 
     backToShop = () => {
         const category = this.props.savedParams.category_like === ''? 'wszystkie produkty' : this.props.savedParams.category_like;
-        this.props.routeProps.history.push(`/${category}/${this.props.savedParams._page}`)
+        this.props.routeProps.history.push(`/${category}/${this.props.savedParams._page || 1}`)
     }
 
     chooseAmount = (ev) => {
@@ -41,8 +48,11 @@ export class ProductPage extends Component {
 
     render(){
         const product = this.props.products.find(prod => prod.id === Number(this.props.routeProps.match.params.id));
+        if(!product){
+            return <div></div>
+        }
         return (
-            <div className = 'products product-container'>
+            product && <div className = 'products product-container'>
                 <div className = 'big-product-picture-box'>
                     <img src = {honey} alt = ''/>
                 </div>
